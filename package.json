@@ -11,10 +11,8 @@
     "vscode": "^1.106.0"
   },
   "categories": [
-      "Snippets",
-      "Programming Languages",
-      "AI Tools",
-      "Other"
+    "AI",
+    "Other"
   ],
   "keywords": [
     "docs-as-system",
