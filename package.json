@@ -1,9 +1,10 @@
 {
-  "name": "docs-as-system-vscode-extension",
-  "displayName": "Docs-as-System",
-  "description": "Create and manage Docs-as-System projects directly inside VS Code.",
+  "name": "docs-as-system-he",
+  "displayName": "Docs-as-System Starter Kit (AI-Agent Project Scaffolder)",
+  "publisher": "TomerKedem",
+  "description": "Create fully structured Docs-as-System projects with integrated AI-Agent workflows, templates, and operational policies. All generated documentation and project templates are written in Hebrew to support teams working natively in the language.",
   "version": "0.0.1",
-  "publisher": "tomer-kedem",
+  
   "license": "MIT",
   "icon": "images/icon.png",
   "engines": {
@@ -14,15 +15,13 @@
   ],
   "keywords": [
     "docs-as-system",
-    "documentation",
-    "ai",
-    "starter-kit",
     "hebrew",
-    "llm",
-    "agent",
-    "developer-tools",
+    "documentation",
+    "ai-agent",
+    "template",
     "project-generator"
-  ],
+  ]
+,
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
