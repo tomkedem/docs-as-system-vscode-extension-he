@@ -1,41 +1,62 @@
 {
-  "name": "docs-as-system-starterkit-he",
-  "version": "0.1.2",
-  "description": "Hebrew Starter Kit for creating new projects using the Docs as System methodology.",
+  "name": "docs-as-system-vscode-extension",
+  "displayName": "Docs-as-System",
+  "description": "Create and manage Docs-as-System projects directly inside VS Code.",
+  "version": "0.0.1",
+  "publisher": "tomer-kedem",
   "license": "MIT",
-  "type": "commonjs",
-  "main": "src/init.cjs",
-  "bin": {
-    "das-he": "./bin/das-he.cjs"
+  "icon": "images/icon.png",
+  "engines": {
+    "vscode": "^1.106.0"
   },
-  "files": [
-    "bin",
-    "src",
-    "starter-project",
-    "templates",
-    "README.md"
+  "categories": [
+    "Snippets"
   ],
   "keywords": [
     "docs-as-system",
-    "starter-kit",
     "documentation",
     "ai",
-    "hebrew"
+    "starter-kit",
+    "hebrew",
+    "llm",
+    "agent",
+    "developer-tools",
+    "project-generator"
   ],
-  "author": "Tomer Kedem",
-  "contributors": [
-    {
-      "name": "Yuval Vanunu"
-    },
-    {
-      "name": "Yehonatan Maman"
-    }
-  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "docsAsSystem.initProject",
+        "title": "Create New Docs-as-System Project",
+        "category": "Docs-as-System"
+      }
+    ]
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tomkedem/Docs-as-System-StarterKit-He.git"
+    "url": "https://github.com/tomkedem/Docs-as-System-VSCode-Extension.git"
   },
-  "dependencies": {
-    "docs-as-system-starterkit-he": "^0.1.2"
+  "homepage": "https://tomkedem.github.io/Docs-as-System/",
+  "bugs": {
+    "url": "https://github.com/tomkedem/Docs-as-System-VSCode-Extension/issues"
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.19.1",
+    "@types/vscode": "^1.106.0",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.39.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.3"
   }
 }

@@ -1,148 +1,143 @@
 <div dir="rtl" style="text-align: right;">
 
-# Docs-as-System StarterKit (Hebrew Edition)
+# Docs-as-System VS Code Extension
 
-**Docs-as-System StarterKit Hebrew** הוא CLI שמייצר פרויקט חדש לפי המתודולוגיה Docs-as-System.  
-הכלי בונה שלד בסיסי, ממלא את תיקיית `docs` בתבניות עדכניות, ומכין אותך לעבודה עם סוכן ה־AI בתוך ה־IDE.
+ההרחבה Docs-as-System ל VS Code מאפשרת ליצור ולהפעיל פרויקטים לפי המתודולוגיה Docs-as-System, בלי לצאת מהעורך.
 
-המטרה היא להתחיל כל פרויקט עם מבנה ברור, עקבי ומוכן לעבודה, בלי לבזבז זמן על יצירת קבצים ותיקיות.
+ההרחבה מחוברת ל CLI הרשמי  
+`docs-as-system-starterkit-he`  
+ומריצה אותו מתוך VS Code כדי ליצור שלד פרויקט מלא, כולל תיקיית docs, תבניות ותצורה ראשונית לסוכן.
 
----
+המטרה היא לחבר בין:
 
-## התקנה
+• סביבת הפיתוח  
+• התיעוד  
+• וסוכן ה AI  
 
-### שימוש ללא התקנה גלובלית
-
-```bash
-npx docs-as-system-starterkit-he init my-project
-```
-## התקנה גלובלית
-
-```bash
-npm install -g docs-as-system-starterkit-he
-das-he init my-project
-```
-
-## פקודות זמינות
-יצירת פרויקט חדש
-```bash
-das-he init project-name
-```
-
-הפקודה יוצרת פרויקט חדש הכולל:
-
-שלד פרויקט בסיסי מתוך starter-project
-
-תיקיית docs מלאה בתבניות
-(agent, planning, architecture, logs, automation, project)
-
-קובץ AGENT_CONFIG.yaml למילוי פרטי הפרויקט
-
-סקריפטי Git בתיקייה automation/git
-
-קבצי תצורה חשובים:
-.gitignore, .editorconfig, .gitattributes
-
-README בסיסי לפרויקט החדש
+באותו מקום.
 
 ---
 
-## מבנה הפרויקט החדש
+## דרישות מוקדמות
 
-לאחר יצירת פרויקט, המבנה ייראה כך:
-</div>
+לפני התקנת ההרחבה מומלץ לוודא:
 
+1. שהתקנת על המכונה את Node.js ו npm  
+2. שאתה יכול להריץ משורת הפקודה:
+
+```bash
+npx docs-as-system-starterkit-he --help
+```
+אחרי שה CLI עובד, ההרחבה תדע להשתמש בו.
+
+# התקנה
+
+### התקנה מתוך VSIX (שלב פיתוח)
+
+אם אתה עובד מקומית עם הריפו:
+
+1. בתיקייה של ההרחבה:
+
+```bash
+npm install
+npm run compile
+npx @vscode/vsce package
+```
+פעולה זו יוצרת קובץ VSIX:
+```bash
+docs-as-system-vscode-extension-0.0.1.vsix
+```
+2. פתח VS Code רגיל
+
+3. עבור לתצוגת הרחבות
+
+4. בתפריט שלוש הנקודות בחר  
+Install from VSIX
+
+5. בחר את קובץ ה VSIX שנוצר
+
+לאחר ההתקנה תראה את ההרחבה ברשימת ההרחבות, עם האיקון שהוגדר.
+---
+## שימוש
+
+אחרי התקנת ההרחבה:
+
+1. פתח את VS Code בספרייה שבה תרצה ליצור פרויקט חדש, או בספרייה ריקה
+
+2. פתח את Command Palette  
+(קיצור: Ctrl+Shift+P)
+
+3. חפש:
+
+```
+Docs-as-System: Create New Docs-as-System Project
+```
+בחר את הפקודה
+
+הזן שם לתיקיית הפרויקט החדשה
+
+ההרחבה תריץ את ה CLI ותייצר עבורך פרויקט מלא לפי Docs-as-System
+
+בסיום תראה תיקייה חדשה עם:
+
+- תיקיית `docs` מלאה בתבניות  
+- תיקיית `src/automation/git` עם סקריפטי Git  
+- קובצי תצורה כמו `.gitignore`, `.editorconfig`, `.gitattributes`  
+- `README` בסיסי לפרויקט החדש
+
+---
+
+## מבנה פרויקט ההרחבה
+</div> 
 <div dir="ltr" style="text-align: left;">
 
 ```plaintext
-📁 my-project/
-├── 📄 .editorconfig
-├── 📄 .gitattributes
-├── 📄 .gitignore
+📁 Docs-as-System-VSCode-Extension/
+├── 📄 package.json
+├── 📄 tsconfig.json
+├── 📄 eslint.config.mjs
 ├── 📄 README.md
 ├── 📁 src/
-│ └── 📁 automation/
-│     └─── 📁 git/
-│           ├── 📄 CREATE_BRANCH.sh
-│           ├── 📄 MERGE_AFTER_APPROVAL.sh
-│           ├── 📄 OPEN_PULL_REQUEST.sh
-│           ├── 📄 PUSH_BRANCH.sh
-│           ├── 📄 STAGE_AND_COMMIT.sh
-│           └── 📄 README.md
-└── 📁 docs/
-├── 📁 agent/
-├── 📁 architecture/
-├── 📁 planning/
-├── 📁 automation/
-├── 📁 project/
-└── 📁 logs/
+│   └── 📄 extension.ts
+├── 📁 out/
+│   └── 📄 extension.js        (נוצר מקומפילציה)
+├── 📁 images/
+│   └── 📄 icon.png
+└── 📁 .vscode/
+    ├── 📄 launch.json
+    ├── 📄 tasks.json
+    └── 📄 extensions.json
 ```
 
-</div>
+</div> 
 <div dir="rtl" style="text-align: right;">
 
-## הצעד הבא אחרי יצירת הפרויקט
-לאחר יצירת פרויקט חדש מומלץ לפתוח את: docs/IMPLEMENTATION_GUIDE.md
+הקובץ src/extension.ts הוא נקודת הכניסה של ההרחבה.
+הוא רושם את הפקודה docsAsSystem.initProject ומריץ את ה CLI דרך npx.
 
-זהו המדריך המעשי שמסביר את סדר העבודה המלא לפי Docs as System.
-הוא כולל:
+קשר ל Docs-as-System StarterKit
 
-• איך ממלאים את תיקיית planning
-• איך מגדירים את הסוכן וההרשאות שלו
-• איך עובדים עם מערכת הלוגים
-• איך לבצע מחזור עבודה שלם
-• מה באחריות האדם ומה באחריות הסוכן
+ההרחבה לא מחליפה את ה CLI, אלא עוטפת אותו.
 
-זהו המסמך הראשון שכדאי לקרוא לפני שמתחילים לכתוב קוד.
+• ה CLI אחראי ליצור את שלד הפרויקט, התבניות והמסמכים
+• ההרחבה מאפשרת להפעיל את ה CLI מתוך VS Code בצורה נוחה
 
-## למה Docs-as-System?
-
-‏Docs-as-System היא מתודולוגיה שמחברת בין:
-
-- תיעוד  
-- קוד  
-- תהליכי פיתוח  
-- סוכני AI  
-
-בצורה שמייצרת מערכת חיה ומתועדת כל הזמן.  
-המתודולוגיה מותאמת במיוחד לעבודה עם סוכני AI שפועלים מתוך ה־IDE.
-
----
-
-## תורמים
-
-החבילה נבנתה בשיתוף פעולה של אנשים מצוינים, וכל תרומה מוזכרת כאן כדי לשמור על שקיפות והערכה מקצועית.
-
-### תורמים לפרויקט Docs as System StarterKit Hebrew
-
-- **יובל ואנונו**  
-  השתתפה בגיבוש הרעיונות הראשוניים וליוותה את בניית ה CLI.
-
-- **יהונתן ממן**  
-  תרם בבדיקות, הערות עומק ושיפור התבניות.
-
-### איך מצטרפים לרשימת התורמים
-
-אם תרמת קוד, שיפרת תבנית, תיקנת בעיה או עזרת לעצב את הכלי בדרכו הנוכחית  
-אתה מוזמן לפתוח Pull Request, ובאישור יתווסף שמך כאן.
-
-התיעוד הזה חי, ומתעדכן בכל תרומה משמעותית.
-
----
-
-## 📄 רישיון
-
+אם תרצה לעבוד רק משורת הפקודה, תוכל להשתמש רק ב:
+```
+npx docs-as-system-starterkit-he init my-project
+```
+## רישיון
 MIT License  
-החבילה חופשית לשימוש, שינוי והטמעה בכל פרויקט.
+ההרחבה חופשית לשימוש, שינוי והטמעה בכל פרויקט.
+
+## מחבר ההרחבה
+
+פותח על ידי תומר קדם כחלק ממערך הכלים הרשמיים של Docs-as-System.
 
 ---
 
+## ריפו GitHub
 
-ריפו ב GitHub    
-https://github.com/tomkedem/Docs-as-System-StarterKit-He
-
----
-
->© 2025 תומר קדם. חלק ממערך התבניות הרשמי של **Docs-as-System**.
+https://github.com/tomkedem/Docs-as-System-VSCode-Extension
 
 </div>

@@ -1,0 +1,30 @@
+# Normalize line endings for all text files
+* text=auto eol=lf
+
+# Mark TypeScript and JavaScript files as text
+*.ts text
+*.tsx text
+*.js text
+*.jsx text
+
+# JSON files
+*.json text
+
+# Markdown files
+*.md text
+
+# YAML files
+*.yaml text
+*.yml text
+
+# Treat common binary assets as binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.svg binary
+*.ico binary
+*.vsix binary
+
+# VS Code configuration files
+.vscode/* text
