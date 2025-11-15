@@ -109,8 +109,8 @@ const TEMPLATE_FILES = [
     dest: "CHANGELOG.md"
   },
   {
-    src: "IMPLEMENTATION_GUIDE.md",
-    dest: "docs/IMPLEMENTATION_GUIDE.md"
+    src: "PROJECT_IMPLEMENTATION_GUIDE.md",
+    dest: "PROJECT_IMPLEMENTATION_GUIDE.md"
   },
   {
     src: "METHODOLOGY_OVERVIEW.md",
@@ -168,7 +168,7 @@ async function copyDir(source, target) {
 
 // הורדת כל התבניות מגיטהאב לתוך docs של הפרויקט
 async function downloadTemplatesIntoProject(targetDir) {
-  console.log("[das-he] Downloading templates from GitHub into project structure ...");
+  console.log("[Docs-as-System Extension] Downloading templates from GitHub into project structure ...");
 
   for (const tpl of TEMPLATE_FILES) {
     const url = `${GITHUB_RAW_BASE}/${tpl.src}`;
@@ -178,7 +178,7 @@ async function downloadTemplatesIntoProject(targetDir) {
     await downloadFile(url, dest);
   }
 
-  console.log("[das-he] All templates downloaded.\n");
+  console.log("[Docs-as-System Extension] All templates downloaded.\n");
 }
 
 async function run() {
@@ -192,14 +192,14 @@ async function run() {
   }
 
   if (command !== "init") {
-    console.error("[das-he] Unknown command:", command);
+    console.error("[Docs-as-System Extension] Unknown command:", command);
     printHelp();
     process.exit(1);
   }
 
   if (!targetName) {
-    console.error("[das-he] Missing project name.");
-    console.log("Usage: das-he init <project-name>");
+    console.error("[Docs-as-System Extension] Missing project name.");
+    console.log("Usage: node init.cjs init <project-name>");
     process.exit(1);
   }
 
@@ -215,7 +215,7 @@ async function run() {
     throw new Error(`Target directory already exists: ${targetDir}`);
   }
 
-  console.log("[das-he] Creating new Docs-as-System project at:");
+  console.log("[Docs-as-System Extension] Creating new Docs-as-System project at:");
   console.log("        " + targetDir);
   console.log();
 
@@ -225,7 +225,7 @@ async function run() {
   // שלב 2: הורדת תבניות לתוך docs
   await downloadTemplatesIntoProject(targetDir);
 
-  console.log("[das-he] Done.\n");
+  console.log("[Docs-as-System Extension] Done.\n");
   console.log("Next steps:");
   console.log(`  cd ${targetName}`);
   console.log("  Open docs/agent/AGENT_CONFIG.yaml and configure the agent behavior.");
@@ -234,11 +234,11 @@ async function run() {
 }
 
 function printHelp() {
-  console.log("Docs-as-System Starter Kit Hebrew CLI");
+  console.log("Docs-as-System VS Code Extension - Project Generator");
   console.log();
   console.log("Usage:");
-  console.log("  das-he init <project-name>   Create a new Docs-as-System project");
-  console.log("  das-he help                  Show this help message");
+  console.log("  node init.cjs init <project-name>   Create a new Docs-as-System project");
+  console.log("  node init.cjs help                  Show this help message");
   console.log();
 }
 
@@ -246,7 +246,7 @@ module.exports = { run };
 
 if (require.main === module) {
   run().catch(err => {
-    console.error("[das-he] Unhandled error:", err);
+    console.error("[Docs-as-System Extension] Unhandled error:", err);
     process.exit(1);
   });
 }

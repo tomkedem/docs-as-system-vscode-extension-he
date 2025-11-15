@@ -1,26 +1,22 @@
 <div dir="rtl" style="text-align: right;">
 
-# מדריך העברת גרסה לחבילה docs-as-system-starterkit-he
+# מדריך פרסום גרסה של Docs-as-System VS Code Extension
 
-מסמך זה מסביר צעד אחר צעד איך להוציא גרסה חדשה של החבילה  
-`docs-as-system-starterkit-he` ל־npm, כולל בדיקות בסיסיות ופעולות בגיט.
+מסמך זה מסביר צעד אחר צעד איך להוציא גרסה חדשה של ההרחבה ל-VS Code Marketplace.
 
 ---
 
 ## לפני שמתחילים
 
-כדי להעביר גרסה צריך:
+כדי לפרסם הרחבה ל-VS Code Marketplace צריך:
 
-• חשבון npm פעיל  
-• התחברות ל־npm מהמחשב המקומי:
-
+• **Personal Access Token (PAT)** מ-Azure DevOps עם הרשאות Marketplace  
+• התקנת כלי הפרסום:
 ```bash
-npm login
+npm install -g @vscode/vsce
 ```
 
-• הרשאה לפרסם את החבילה docs-as-system-starterkit-he
 • ריפו נקי משינויים לא שמורים:
-
 ```bash
 git status
 ```
@@ -28,169 +24,139 @@ git status
 
 ---
 
-איך בוחרים מספר גרסה
+## איך בוחרים מספר גרסה
 
-החבילה משתמשת ב־Semantic Versioning בפורמט:
-```bash
+ההרחבה משתמשת ב-Semantic Versioning בפורמט:
+```
 MAJOR.MINOR.PATCH
 ```
 
 בקצרה:
 
-• שינוי PATCH
-למשל מ־0.1.1 ל־0.1.2
-מיועד לתיקוני באגים או שיפורים קטנים שלא שוברים התאמה לאחור.
+• **שינוי PATCH** (למשל מ-0.0.1 ל-0.0.2)  
+מיועד לתיקוני באגים או שיפורים קטנים שלא משנים פונקציונליות.
 
-• שינוי MINOR
-למשל מ־0.1.1 ל־0.2.0
-מיועד להוספת יכולות חדשות בלי שבירה של פרויקטים קיימים.
+• **שינוי MINOR** (למשל מ-0.0.1 ל-0.1.0)  
+מיועד להוספת פיצ'רים חדשים (פקודות, הגדרות, וכו').
 
-• שינוי MAJOR
-למשל מ־1.4.2 ל־2.0.0
-מיועד לשינויים שמחייבים התאמות בפרויקטים קיימים.
-
-לפני כל שחרור מחליטים איזה סוג שינוי קרה במערכת ובוחרים מספר גרסה בהתאם.
+• **שינוי MAJOR** (למשל מ-0.9.0 ל-1.0.0)  
+מיועד לשינויים משמעותיים או שבירת תאימות לאחור.
 
 ---
 
-## צעד 1: עדכון קובץ package.json
+## שלבי הפרסום
 
-יש שתי דרכים להעלות גרסה.
+### 1. עדכון מספר הגרסה
 
-אופציה א: שימוש בפקודה npm version (מומלץ)
-
-מהשורש של הפרויקט:
-
-```bash
-# שינוי קטן בלבד
-npm version patch
-
-# הוספת יכולות בלי שבירת תאימות
-npm version minor
-
-# שינוי גדול עם שבירת תאימות
-npm version major
-```
-הפקודה עושה כמה דברים:
-
-• מעדכנת את השדה version בקובץ package.json
-• יוצרת tag חדש בגיט עם מספר הגרסה (אם הריפו מחובר לגיט)
-
-אופציה ב: עדכון ידני
-
-אם לא רוצים להשתמש בפקודת npm:
-
-פותחים את package.json
-
-מעדכנים את השדה version לערך החדש, לדוגמה:
-```bash
-"version": "0.2.0"
+ערוך את `package.json` ועדכן את השדה `version`:
+```json
+{
+  "version": "0.0.2"
+}
 ```
 
-שומרים את הקובץ
+### 2. עדכון CHANGELOG.md
 
-במקרה כזה צריך ליצור tag בגיט ידנית אם רוצים סימון ברור של הגרסה.
+הוסף רשומה חדשה ב-`CHANGELOG.md` המתארת את השינויים בגרסה החדשה:
+```markdown
+## גרסה 0.0.2
+• תיקון באג ב-X
+• שיפור ביצועים ב-Y
+• הוספת פיצ'ר Z
+```
 
----
+### 3. בדיקה מקומית
 
-## צעד 2: בדיקות מקומיות לפני פרסום
-
-לפני פרסום ל־npm כדאי לבדוק שה־CLI באמת עובד.
-
-1.התקנה מקומית:
+לפני פרסום, בדוק שההרחבה עובדת:
 ```bash
 npm install
+npm run compile
 ```
-2.הרצה ישירה של הסקריפט (אם מוגדר ב־package.json):
+
+הרץ את ההרחבה במצב Debug:
+- לחץ F5 ב-VS Code
+- בחלון הבדיקה, הפעל את הפקודה ובדוק שהכל עובד
+
+### 4. יצירת קובץ VSIX
+
+צור חבילת VSIX לבדיקה סופית:
+```bash
+vsce package
+```
+
+זה יצור קובץ כמו:
+```
+docs-as-system-vscode-extension-0.0.2.vsix
+```
+
+התקן אותו ידנית ב-VS Code ובדוק פעם אחרונה.
+
+### 5. Commit ו-Tag ב-Git
 
 ```bash
-node bin/das-he.cjs --help
+git add .
+git commit -m "Release v0.0.2"
+git tag v0.0.2
+git push origin master
+git push origin v0.0.2
 ```
-3.אפשרות נוספת: שימוש ב־npm link כדי לבדוק את הפקודה כמו משתמש קצה:
 
+### 6. פרסום ל-VS Code Marketplace
+
+עם Personal Access Token:
 ```bash
-npm link
-das-he --help
-das-he create test-project
+vsce publish -p YOUR_PAT_TOKEN
 ```
 
-בודקים שהפקודה יוצרת פרויקט חדש, עם כל התיקיות והקבצים הנכונים.
+או אם כבר התחברת בעבר:
+```bash
+vsce publish
+```
 
-אם הכול עובד, ממשיכים לפרסום.
+הכלי יעלה אוטומטית את ההרחבה ל-Marketplace.
 
 ---
 
-## צעד 3: commit ו־tag בגיט
+## בדיקה לאחר הפרסום
 
-אם השתמשת ב־npm version כבר נוצר tag אוטומטית.
-אם עדכנת את package.json ידנית, יוצרים commit ו־tag:
+1. חפש את ההרחבה ב-VS Code Marketplace:  
+   https://marketplace.visualstudio.com/vscode
 
-```bash
-git add package.json
-git commit -m "Bump version to 0.2.0"
-git tag v0.2.0
-```
+2. התקן את ההרחבה ממרכז ההרחבות ב-VS Code ובדוק שהגרסה החדשה עובדת
 
-ולאחר מכן:
-```bash
-git push origin main
-git push origin --tags
-```
-
-שם הענף (main) יכול להיות שונה אם בפרויקט מוגדר שם אחר.
+3. בדוק שהקישור לריפו ב-GitHub עובד
 
 ---
 
-## צעד 4: פרסום הגרסה ל־npm
+## פתרון בעיות
 
-מהשורש של הפרויקט מריצים:
-
+### שגיאה: "Publisher not found"
+צריך ליצור publisher ב-VS Code Marketplace:
 ```bash
-npm publish --access public
+vsce create-publisher YOUR_PUBLISHER_NAME
 ```
 
-הערות חשובות:
+### שגיאה: "Missing icon"
+ודא שיש קובץ `images/icon.png` והוא מוגדר ב-`package.json`
 
-• לחבילה שכבר פורסמה בעבר כציבורית, אפשר בדרך כלל להשתמש פשוט ב־npm publish
-• אם הפרסום נכשל בגלל שמספר הגרסה כבר קיים, צריך להעלות שוב את המספר ב־package.json
-
-לאחר הפרסום אפשר לוודא שהגרסה החדשה זמינה:
-
-```bash
-npm view docs-as-system-starterkit-he version
-```
-או לראות את כל הגרסאות:
-```bash
-npm view docs-as-system-starterkit-he versions
-```
+### שגיאה: "Invalid README"
+ודא ש-README.md קיים ומכיל תוכן תקין
 
 ---
 
-## צעד 5: בדיקה כמו משתמש אמיתי
+## קישורים שימושיים
 
-על מחשב אחר, או בסביבת עבודה נקייה, כדאי לבדוק:
+• **VS Code Publishing Extensions Guide**:  
+  https://code.visualstudio.com/api/working-with-extensions/publishing-extension
 
-```bash
-npm install -g docs-as-system-starterkit-he
-das-he --help
-das-he create my-project
-```
+• **vsce Documentation**:  
+  https://github.com/microsoft/vscode-vsce
 
-אם הפקודות עובדות והפרויקט שנוצר תקין, הגרסה שוחררה בהצלחה.
-
----
-
-## צעד 6: עדכון תיעוד
-
-לאחר שחרור גרסה כדאי לעדכן:
-
-• קובץ CHANGELOG אם קיים
-• README עם דוגמאות עדכניות
-• כל מסמך אחר שמפנה לפקודות או לגרסה מסוימת
-
-כך משתמשים חדשים יקבלו תמונה מדויקת של המצב העדכני של החבילה.
+• **ריפו GitHub של ההרחבה**:  
+  https://github.com/tomkedem/Docs-as-System-VSCode-Extension
 
 ---
 
-© 2025 תומר קדם. חלק ממערך התבניות הרשמי של Docs as System.
+© 2025 תומר קדם
+
 </div>

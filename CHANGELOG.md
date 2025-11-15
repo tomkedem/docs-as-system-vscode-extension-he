@@ -1,38 +1,24 @@
 <div dir="rtl" style="text-align: right;">
 
-# יומן שינויים של Docs as System StarterKit Hebrew
+# יומן שינויים של Docs-as-System VS Code Extension
 
-קובץ זה מתעד את השינויים שבוצעו בחבילה docs as system starterkit he.  
-הוא משקף את ההתפתחות של ה CLI והתבניות המצורפות אליו.
-
----
-
-## גרסה 0.1.2  
-• הוספת תמיכה רשמית בקובץ CHANGELOG לכל פרויקט חדש שנוצר בעזרת das he  
-• יצירת קובץ תבנית בשם CHANGELOG_TEMPLATE.he.md  
-• עדכון init.cjs כך שיכלול העתקה של CHANGELOG_TEMPLATE.he.md אל שורש הפרויקט החדש בשם CHANGELOG.md  
-• שיפור אחידות התבניות בין starter project לבין templates  
-• תיקון מבנה יעד בתיקיית docs לפרויקטים חדשים
+קובץ זה מתעד את השינויים שבוצעו בהרחבת VS Code.  
+הוא משקף את ההתפתחות של ההרחבה והפיצ'רים המוספים אליה.
 
 ---
 
-## גרסה 0.1.1  
-• תיקונים במבנה ההעתקה של תבניות docs  
-• שיפור תהליך יצירת פרויקט חדש  
-• עדכון README  
-• שחרור ראשוני ל npm
+## גרסה 0.0.1 (נוכחית)
+• יצירת הרחבת VS Code ראשונית  
+• רישום פקודה: "Docs-as-System: Create New Docs-as-System Project"  
+• שילוב לוגיקת יצירת פרויקט ישירות בהרחבה (ללא תלות ב-CLI חיצוני)  
+• הורדת תבניות אוטומטית מ-GitHub repository  
+• יצירת מבנה פרויקט מלא עם docs/, src/, automation/git/  
+• תמיכה בקבצי תצורה: .gitignore, .editorconfig, .gitattributes  
+• הוספת CHANGELOG.md אוטומטי לכל פרויקט חדש  
+• תמיכה בתצוגת קלט בעברית ב-VS Code
 
 ---
 
-## גרסה 0.1.0  
-• גרסה ראשונית של החבילה  
-• יצירת CLI בסיסי בשם das he  
-• יצירת starter project התחלתי  
-• בניית מנגנון הורדת תבניות אוטומטי מגיטהאב  
-• פרסום ראשון ל npm
-
----
-
-© 2025 תומר קדם. חלק ממערך התבניות הרשמי של Docs as System.
+© 2025 תומר קדם. הרחבת VS Code רשמית עבור Docs-as-System.
 
 </div>

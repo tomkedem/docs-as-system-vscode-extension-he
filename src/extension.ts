@@ -17,7 +17,9 @@ export function activate(context: vscode.ExtensionContext) {
         return;
       }
 
-      const command = `npx docs-as-system-starterkit-he init "${projectName}"`;
+      const nodePath = process.execPath;
+      const initScript = require.resolve('../src/init.cjs');
+      const command = `"${nodePath}" "${initScript}" init "${projectName}"`;
 
       vscode.window.showInformationMessage(
         "יוצר פרויקט חדש לפי Docs-as-System..."

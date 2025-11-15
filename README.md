@@ -2,11 +2,13 @@
 
 # Docs-as-System VS Code Extension
 
-ההרחבה Docs-as-System ל VS Code מאפשרת ליצור ולהפעיל פרויקטים לפי המתודולוגיה Docs-as-System, בלי לצאת מהעורך.
+ההרחבה Docs-as-System ל VS Code מאפשרת ליצור ולהפעיל פרויקטים לפי המתודולוגיה Docs-as-System, ישירות מתוך העורך.
 
-ההרחבה מחוברת ל CLI הרשמי  
-`docs-as-system-starterkit-he`  
-ומריצה אותו מתוך VS Code כדי ליצור שלד פרויקט מלא, כולל תיקיית docs, תבניות ותצורה ראשונית לסוכן.
+ההרחבה יוצרת שלד פרויקט מלא, כולל:
+• תיקיית `docs` עם תבניות למסמכים  
+• תיקיית `src` לקוד המקור  
+• סקריפטי אוטומציה ל Git  
+• קבצי תצורה בסיסיים  
 
 המטרה היא לחבר בין:
 
@@ -20,43 +22,53 @@
 
 ## דרישות מוקדמות
 
-לפני התקנת ההרחבה מומלץ לוודא:
-
-1. שהתקנת על המכונה את Node.js ו npm  
-2. שאתה יכול להריץ משורת הפקודה:
-
-```bash
-npx docs-as-system-starterkit-he --help
-```
-אחרי שה CLI עובד, ההרחבה תדע להשתמש בו.
+- **Node.js** מותקן על המחשב (לצורך תמיכה בתבניות והורדת מסמכים מ-GitHub)
+- **VS Code** גרסה 1.106.0 ומעלה
 
 # התקנה
+
+### התקנה ממרכז ההרחבות של VS Code (עתידי)
+
+לאחר פרסום ההרחבה, תוכל להתקין אותה ישירות מ-VS Code Marketplace:
+
+1. פתח את VS Code
+2. עבור לתצוגת הרחבות (Ctrl+Shift+X)
+3. חפש "Docs-as-System"
+4. לחץ על Install
 
 ### התקנה מתוך VSIX (שלב פיתוח)
 
 אם אתה עובד מקומית עם הריפו:
 
-1. בתיקייה של ההרחבה:
+1. שכפל את הריפו:
+```bash
+git clone https://github.com/tomkedem/Docs-as-System-VSCode-Extension.git
+cd Docs-as-System-VSCode-Extension
+```
 
+2. התקן תלויות ובנה את ההרחבה:
 ```bash
 npm install
 npm run compile
+```
+
+3. צור קובץ VSIX:
+```bash
 npx @vscode/vsce package
 ```
-פעולה זו יוצרת קובץ VSIX:
-```bash
+פעולה זו יוצרת קובץ:
+```
 docs-as-system-vscode-extension-0.0.1.vsix
 ```
-2. פתח VS Code רגיל
 
-3. עבור לתצוגת הרחבות
+4. התקן ב-VS Code:
+   - פתח VS Code
+   - עבור לתצוגת הרחבות (Ctrl+Shift+X)
+   - לחץ על תפריט שלוש הנקודות למעלה
+   - בחר **Install from VSIX**
+   - בחר את קובץ ה-VSIX שנוצר
 
-4. בתפריט שלוש הנקודות בחר  
-Install from VSIX
-
-5. בחר את קובץ ה VSIX שנוצר
-
-לאחר ההתקנה תראה את ההרחבה ברשימת ההרחבות, עם האיקון שהוגדר.
+לאחר ההתקנה תראה את ההרחבה ברשימת ההרחבות.
 ---
 ## שימוש
 
@@ -65,25 +77,29 @@ Install from VSIX
 1. פתח את VS Code בספרייה שבה תרצה ליצור פרויקט חדש, או בספרייה ריקה
 
 2. פתח את Command Palette  
-(קיצור: Ctrl+Shift+P)
+   (קיצור: **Ctrl+Shift+P** או **Cmd+Shift+P** ב-macOS)
 
-3. חפש:
+3. חפש את הפקודה:
+   ```
+   Docs-as-System: Create New Docs-as-System Project
+   ```
 
-```
-Docs-as-System: Create New Docs-as-System Project
-```
-בחר את הפקודה
+4. בחר את הפקודה
 
-הזן שם לתיקיית הפרויקט החדשה
+5. הזן שם לתיקיית הפרויקט החדשה
 
-ההרחבה תריץ את ה CLI ותייצר עבורך פרויקט מלא לפי Docs-as-System
+ההרחבה תיצור עבורך פרויקט מלא לפי Docs-as-System.
 
 בסיום תראה תיקייה חדשה עם:
 
-- תיקיית `docs` מלאה בתבניות  
-- תיקיית `src/automation/git` עם סקריפטי Git  
-- קובצי תצורה כמו `.gitignore`, `.editorconfig`, `.gitattributes`  
-- `README` בסיסי לפרויקט החדש
+- תיקיית **`docs/`** מלאה בתבניות מסמכים (agent, architecture, automation, logs, planning, project)
+- תיקיית **`src/`** לקוד המקור  
+- תיקיית **`automation/git/`** עם סקריפטי Git (יצירת branch, commit, push, pull request)
+- קבצי תצורה: `.gitignore`, `.editorconfig`, `.gitattributes`  
+- `CHANGELOG.md` בסיסי לפרויקט החדש
+
+התבניות מתקבלות אוטומטית מ-GitHub repository:  
+https://github.com/tomkedem/Docs-as-System-StarterKit-He
 
 ---
 
@@ -112,20 +128,17 @@ Docs-as-System: Create New Docs-as-System Project
 </div> 
 <div dir="rtl" style="text-align: right;">
 
-הקובץ src/extension.ts הוא נקודת הכניסה של ההרחבה.
-הוא רושם את הפקודה docsAsSystem.initProject ומריץ את ה CLI דרך npx.
+הקובץ `src/extension.ts` הוא נקודת הכניסה של ההרחבה.  
+הוא רושם את הפקודה `docsAsSystem.initProject` ומפעיל את סקריפט היצירה `src/init.cjs` הפנימי.
 
-קשר ל Docs-as-System StarterKit
+## קשר ל-Docs-as-System Templates
 
-ההרחבה לא מחליפה את ה CLI, אלא עוטפת אותו.
+ההרחבה מורידה תבניות ישירות מ-GitHub repository המרכזי:  
+**https://github.com/tomkedem/Docs-as-System-StarterKit-He**
 
-• ה CLI אחראי ליצור את שלד הפרויקט, התבניות והמסמכים
-• ההרחבה מאפשרת להפעיל את ה CLI מתוך VS Code בצורה נוחה
-
-אם תרצה לעבוד רק משורת הפקודה, תוכל להשתמש רק ב:
-```
-npx docs-as-system-starterkit-he init my-project
-```
+• התבניות מכילות מסמכי תיכנון, ארכיטקטורה, אוטומציה ולוגים  
+• ההרחבה יוצרת מבנה פרויקט מלא עם `docs/`, `src/`, `automation/git/`  
+• כל פרויקט חדש מקבל את המסמכים והתצורה המעודכנים ביותר
 ## רישיון
 MIT License  
 ההרחבה חופשית לשימוש, שינוי והטמעה בכל פרויקט.
