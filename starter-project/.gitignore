@@ -1,0 +1,39 @@
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Logs
+logs/
+*.log
+*.tmp
+
+# Environment variables
+.env
+.env.local
+.env.test
+.env.production
+
+# Build output
+dist/
+build/
+.out/
+.next/
+coverage/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docs-as-System generated logs
+docs/logs/IMPLEMENTATION_LOG.md
+docs/logs/IMPLEMENTATION_LOG_SUMMARY.he.md
+docs/logs/IMPLEMENTATION_LOG_SUMMARY.en.md
+
+# Temporary agent files
+.agent-cache/

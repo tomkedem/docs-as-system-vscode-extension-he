@@ -1,0 +1,38 @@
+{
+  "name": "docs-as-system-starterkit-he",
+  "version": "0.1.2",
+  "description": "Hebrew Starter Kit for creating new projects using the Docs as System methodology.",
+  "license": "MIT",
+  "type": "commonjs",
+  "main": "src/init.cjs",
+  "bin": {
+    "das-he": "./bin/das-he.cjs"
+  },
+  "files": [
+    "bin",
+    "src",
+    "starter-project",
+    "templates",
+    "README.md"
+  ],
+  "keywords": [
+    "docs-as-system",
+    "starter-kit",
+    "documentation",
+    "ai",
+    "hebrew"
+  ],
+  "author": "Tomer Kedem",
+  "contributors": [
+    {
+      "name": "Yuval Vanunu"
+    },
+    {
+      "name": "Yehonatan Maman"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomkedem/Docs-as-System-StarterKit-He.git"
+  }
+}
