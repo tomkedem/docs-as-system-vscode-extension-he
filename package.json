@@ -1,9 +1,9 @@
 {
   "name": "docs-as-system-he",
-  "displayName": "Docs-as-System Starter Kit (AI-Agent Project Scaffolder)",
+  "displayName": "Docs-as-System-he Starter Kit (AI Agent Development Scaffolder)",
   "publisher": "TomerKedem",
-  "description": "Create fully structured Docs-as-System projects with integrated AI-Agent workflows, templates, and operational policies. All generated documentation and project templates are written in Hebrew to support teams working natively in the language.",
-  "version": "0.0.1",
+  "description": "Create fully structured Docs-as-System projects with integrated AI Agent workflows, templates, and operational policies. All generated documentation and project templates are written in Hebrew to support teams working natively in the language.",
+  "version": "0.0.2",
   
   "license": "MIT",
   "icon": "images/icon.png",
@@ -11,17 +11,21 @@
     "vscode": "^1.106.0"
   },
   "categories": [
-    "Snippets"
+      "Snippets",
+      "Programming Languages",
+      "AI Tools",
+      "Other"
   ],
   "keywords": [
     "docs-as-system",
     "hebrew",
     "documentation",
-    "ai-agent",
+    "ai agent",
+    "agent",
+    "ai development",
     "template",
     "project-generator"
-  ]
-,
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
