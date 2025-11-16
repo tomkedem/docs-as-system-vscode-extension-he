@@ -2,7 +2,7 @@
 
 # מדריך יישום מלא  
 
-Docs-as-System
+Docs-as-System-he
 
 ## מבוא
 
