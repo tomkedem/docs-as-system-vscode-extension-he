@@ -222,6 +222,9 @@ async function run() {
   // שלב 1: שלד בסיסי מה Starter Project
   await copyDir(starterProjectDir, targetDir);
 
+  // ודא שתיקיית src קיימת גם אם היא ריקה
+  await fs.promises.mkdir(path.join(targetDir, "src"), { recursive: true });
+
   // שלב 2: הורדת תבניות לתוך docs
   await downloadTemplatesIntoProject(targetDir);
 
