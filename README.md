@@ -2,7 +2,7 @@
 <table dir="rtl" align="right">
 <tr><td>
 
-# Docs-as-System VS Code Extension He
+# Docs-as-System VS Code Extension He.
 
 הרחבה שמייצרת עבורך פרויקט Docs-as-System מלא – כולל תבניות, תצורה וסקריפטי Git – ישירות מתוך VS Code.
 
