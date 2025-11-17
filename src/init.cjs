@@ -154,11 +154,19 @@ async function copyDir(source, target) {
   await fs.promises.mkdir(target, { recursive: true });
   const entries = await fs.promises.readdir(source, { withFileTypes: true });
 
+  if (entries.length === 0) {
+    // צור תיקיה ריקה אם אין בה קבצים
+    await fs.promises.mkdir(target, { recursive: true });
+    return;
+  }
+
   for (const entry of entries) {
     const srcPath = path.join(source, entry.name);
     const destPath = path.join(target, entry.name);
 
     if (entry.isDirectory()) {
+      // צור תיקיה גם אם היא ריקה
+      await fs.promises.mkdir(destPath, { recursive: true });
       await copyDir(srcPath, destPath);
     } else if (entry.isFile()) {
       await fs.promises.copyFile(srcPath, destPath);
