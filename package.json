@@ -29,7 +29,7 @@
     "commands": [
       {
         "command": "docsAsSystem.initProject",
-        "title": "Create New Docs-as-System Project",
+        "title": "Create New Docs-as-System-he Project",
         "category": "Docs-as-System"
       }
     ]
