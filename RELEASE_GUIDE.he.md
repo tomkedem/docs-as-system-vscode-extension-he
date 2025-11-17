@@ -153,7 +153,7 @@ vsce create-publisher YOUR_PUBLISHER_NAME
   https://github.com/microsoft/vscode-vsce
 
 • **ריפו GitHub של ההרחבה**:  
-  https://github.com/tomkedem/Docs-as-System-VSCode-Extension
+  https://github.com/tomkedem/docs-as-system-vscode-extension-he
 
 ---
 
