@@ -36,11 +36,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tomkedem/Docs-as-System-VSCode-Extension.git"
+    "url": "https://github.com/tomkedem/docs-as-system-vscode-extension-he.git"
   },
-  "homepage": "https://tomkedem.github.io/Docs-as-System/",
+  "homepage": "https://tomkedem.github.io/Docs-as-System/index.he.html",
   "bugs": {
-    "url": "https://github.com/tomkedem/Docs-as-System-VSCode-Extension/issues"
+    "url": "https://github.com/tomkedem/docs-as-system-vscode-extension-he/issues"
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
