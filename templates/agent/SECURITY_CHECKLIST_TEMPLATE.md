@@ -1,11 +1,11 @@
 <div dir="rtl" style="text-align: right;">
 
-> ⚙️ **Template Notice:**  
+> ⚙️ **הודעת תבנית:**  
 > קובץ זה הוא תבנית רשמית של Docs-as-System.  
 > אין לערוך אותו ישירות בתוך הפרויקט — בעת אתחול מערכת חדשה, יש להעתיק אותו אל תיקייה בשם `docs/security/`  
 > ולשמור את הקובץ בשם `SECURITY_CHECKLIST.md` ולהתאים אותו לארגון.
 
-# תבנית בדיקות אבטחה — Security Checklist
+# תבנית בדיקות אבטחה
 
 **מסמך בפרויקט בפועל:** `docs/security/SECURITY_CHECKLIST.md`  
 **תבנית בתיקיית התבניות:** `templates/agent/SECURITY_CHECKLIST_TEMPLATE.md`  

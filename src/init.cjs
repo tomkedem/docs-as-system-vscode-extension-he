@@ -32,8 +32,12 @@ const TEMPLATE_FILES = [
 
   // architecture
   {
+    src: "architecture/ADR_INDEX_TEMPLATE.md",
+    dest: "docs/architecture/decisions/ADR_INDEX.md"
+  },
+  {
     src: "architecture/ADR_TEMPLATE.md",
-    dest: "docs/architecture/ADR.md"
+    dest: "docs/architecture/decisions/ADR.md"
   },
   {
     src: "architecture/ARCHITECTURE_BLUEPRINT_TEMPLATE.md",
@@ -60,12 +64,12 @@ const TEMPLATE_FILES = [
 
   // logs
   {
-    src: "logs/IMPLEMENTATION_LOG_TEMPLATE.md",
-    dest: "docs/logs/IMPLEMENTATION_LOG.md"
-  },
-  {
     src: "logs/IMPLEMENTATION_LOG_BY_CYCLE_TEMPLATE.md",
     dest: "docs/logs/IMPLEMENTATION_LOG_BY_CYCLE.md"
+  },
+  {
+    src: "logs/IMPLEMENTATION_LOG_TEMPLATE.md",
+    dest: "docs/logs/IMPLEMENTATION_LOG.md"
   },
   {
     src: "logs/IMPLEMENTATION_LOG_SUMMARY_TEMPLATE.he.md",

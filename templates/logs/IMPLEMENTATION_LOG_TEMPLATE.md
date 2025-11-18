@@ -1,6 +1,6 @@
 <div dir="rtl" style="text-align: right;">
 
-> ⚙️ **Template Notice:**  
+> ⚙️ **הודעת תבנית:**  
 > קובץ זה הוא תבנית רשמית של Docs-as-System.  
 > אין לערוך אותו ישירות בתוך הפרויקט — בעת אתחול מערכת חדשה, יש להעתיק אותו אל תיקייה בשם `docs/logs/`  
 > ולשמור את הקובץ בשם `IMPLEMENTATION_LOG.md` ולהתאים אותו לארגון.
@@ -123,6 +123,7 @@ Summary Link: docs/logs/IMPLEMENTATION_LOG_SUMMARY_BY_CYCLE.md
 זהו מקור האמת המבצעי של כל פרויקט העובד לפי **Docs-as-System**.  
 כל שינוי עובר דרכו, וכל מחזור נמדד על בסיס הנתונים שנאספו בו.
 
+---
 
 >© 2025 תומר קדם. חלק ממערך התבניות הרשמי של **Docs-as-System**.
 </div>

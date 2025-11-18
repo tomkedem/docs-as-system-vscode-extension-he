@@ -1,11 +1,11 @@
 <div dir="rtl" style="text-align: right;">
 
-> ⚙️ **Template Notice:**  
+> ⚙️ **הודעת תבנית:**  
 > קובץ זה הוא תבנית רשמית של Docs-as-System.  
 > אין לערוך אותו ישירות בתוך הפרויקט — בעת אתחול מערכת חדשה, יש להעתיק אותו אל תיקייה בשם `docs/agent/`  
 > ולשמור את הקובץ בשם `HUMAN_OPERATIONAL_POLICY.md` ולהתאים לארגון.
 
-# תבנית מדיניות פעולה אנושית — Human Operational Policy
+# תבנית מדיניות פעולה אנושית
 
 **מסמך בפרויקט בפועל:** `docs/agent/HUMAN_OPERATIONAL_POLICY.md`  
 **תבנית בתיקיית התבניות:** `templates/agent/HUMAN_OPERATIONAL_POLICY_TEMPLATE.md`  

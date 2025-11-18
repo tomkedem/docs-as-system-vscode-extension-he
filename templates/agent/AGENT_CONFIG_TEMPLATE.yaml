@@ -67,3 +67,4 @@ git:
       # ייחוס משותף לסוכן המקומי שביצע את השינוי.
       - "Co-authored-by: cargo-helper <agent@local>"
       
+# © 2025 תומר קדם. חלק ממערך התבניות הרשמי של **Docs-as-System**. 

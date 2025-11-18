@@ -1,6 +1,6 @@
 <div dir="rtl" style="text-align: right;">
 
-> ⚙️ **Template Notice:**  
+> ⚙️ **הודעת תבנית:**  
 > קובץ זה הוא תבנית רשמית של Docs-as-System.  
 > אין לערוך אותו ישירות בתוך הפרויקט — בעת אתחול מערכת חדשה, יש להעתיק אותו אל תיקייה בשם `docs/architecture/`  
 > ולשמור את הקובץ בשם `ARCHITECTURE_BLUEPRINT.md` ולהתאים אותו לפרויקט.

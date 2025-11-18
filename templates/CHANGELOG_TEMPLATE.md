@@ -1,6 +1,6 @@
 <div dir="rtl" style="text-align: right;">
 
-> ⚙️ Template Notice  
+> ⚙️ הודעת תבנית  
 > קובץ זה הוא תבנית רשמית של Docs as System.  
 > אין לערוך אותו בתוך פרויקט קיים.  
 > בעת יצירת מערכת חדשה יש להעתיק אותו אל שורש הפרויקט בשם CHANGELOG.md  

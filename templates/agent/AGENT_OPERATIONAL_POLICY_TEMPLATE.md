@@ -1,11 +1,11 @@
 <div dir="rtl" style="text-align: right;">
 
-> ⚙️ **Template Notice:**  
+> ⚙️ **הודעת תבנית:**  
 > קובץ זה הוא תבנית רשמית של Docs-as-System.  
 > אין לערוך אותו ישירות בתוך הפרויקט — בעת אתחול מערכת חדשה, יש להעתיק אותו אל תיקייה בשם `docs/`  
 > ולשמור את הקובץ בשם `AGENT_OPERATIONAL_POLICY.md` ולהתאים לארגון.
 
-# תבנית מדיניות פעולה לסוכן — Agent Operational Policy
+# תבנית מדיניות פעולה לסוכן
 
 **מסמך בפרויקט בפועל:** `docs/agent/AGENT_OPERATIONAL_POLICY.md`  
 **תבנית בתיקיית התבניות:** `templates/agent/AGENT_OPERATIONAL_POLICY_TEMPLATE.md`  
